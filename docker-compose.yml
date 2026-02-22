@@ -1,0 +1,10 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+      args:
+        VITE_TRIPOSR_UI_URL: http://host.docker.internal:7860
+    container_name: tripo-frontend-wrapper
+    ports:
+      - "3000:3000"
